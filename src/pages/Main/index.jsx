@@ -2,20 +2,20 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
+import advertiserBackground from '../../assets/advertiser.png';
+import influencerBackground from '../../assets/influencer.png';
 
-export default function home() {
+export default function Main() {
     return (
         <Wrapper>
-            <Navbar></Navbar>
-            <hr />
             <Container>
                 <LeftSection>
-                    <Link to="/company">
+                    <Link to="/advertiser" style={{ textDecoration: 'none' }}>
                         <button>사업자 페이지</button>
                     </Link>
                 </LeftSection>
                 <RightSection>
-                    <Link to="/influencer">
+                    <Link to="/influencer" style={{ textDecoration: 'none' }}>
                         <button>인플루언서 페이지</button>
                     </Link>
                 </RightSection>
@@ -27,45 +27,54 @@ export default function home() {
 }
 
 const Wrapper = styled.div`
+    position: relative;
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    min-width: 1800px;
+
+    margin: 0 auto;
     hr {
-        width: 100%;
         height: 2px;
         background-color: gray;
     }
 `;
 
 const Container = styled.div`
-    flex: 1;
     display: flex;
+    width: auto;
+    height: auto;
     button {
-        background: ${(props) => (props.isSelected ? '#a3b6e9' : '#FF7062')};
         border: none;
-        width: 10rem;
-        height: 2.4rem;
-        border-radius: 1rem;
+        display: flex;
+        position: relative;
+        top: 300px;
+        width: 21.25rem;
+        height: 6rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--16, 1rem);
+        background: var(--Primary-Light, #f7f9fb);
         cursor: pointer;
-        font-size: 0.9375rem;
-        font-style: bold;
-        font-weight: 900;
-        line-height: 130%;
-        color: #fff;
-        margin-top: 30rem;
+        color: var(--black-100, #1c1c1c);
+        font-family: Inter;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 2.25rem;
         box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
         &:hover {
-            background: #f29788;
+            background: #ededed;
         }
     }
 `;
-
 const LeftSection = styled.div`
     box-sizing: border-box;
-    height: 800px;
-    background-color: #d9d9d9;
-    flex-basis: 50%;
+    background-image: url(${advertiserBackground});
+    background-size: cover;
+    flex: 1;
+    width: 1250px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,9 +82,12 @@ const LeftSection = styled.div`
 `;
 
 const RightSection = styled.div`
-    background-color: #a338f6;
-    height: 800px;
-    flex-basis: 50%;
+    background-image: url(${influencerBackground});
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 1;
+    width: 1250px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;

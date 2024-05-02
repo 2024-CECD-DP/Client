@@ -1,9 +1,8 @@
 import React from 'react';
-import CompanyNavbar from '../../components/Navbar/CompanyNavbar';
+import CompanyNavbar from '../../components/Navbar/AdvertiserNavbar';
 import { styled } from 'styled-components';
-import { Link } from 'react-router-dom';
 
-export default function CompanyMain() {
+export default function AdvertiserMain() {
     return (
         <>
             <CompanyNavbar></CompanyNavbar>
