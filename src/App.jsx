@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
-import Page1 from './pages/page_1'
-import Page2 from './pages/page_2'
+import Main from './pages/Main/index';
+import Company from './pages/Company';
+import Influencer from './pages/Influencer';
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/page1" element={<Page1/>}/>
-        <Route path="/page2" element={<Page2/>}/>
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/company" element={<Company />} />
+                <Route path="/influencer" element={<Influencer />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

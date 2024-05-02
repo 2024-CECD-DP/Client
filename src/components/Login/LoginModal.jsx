@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 
-export default function Week1() {
+export default function LoginModal() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [age, setAge] = useState('');
@@ -72,11 +72,10 @@ export default function Week1() {
         if (confirmPassword !== password) {
             setConfirmPasswordMessage({ message: '비밀번호가 일치하지 않습니다!', success: false });
             isValid = false;
-        } else if(confirmPassword == ''){
+        } else if (confirmPassword == '') {
             setConfirmPasswordMessage({ message: '비밀번호가 일치하지 않습니다!', success: false });
             isValid = false;
-        } 
-        else {
+        } else {
             setConfirmPasswordMessage({ message: '비밀번호가 일치합니다!', success: true });
         }
 
@@ -96,7 +95,8 @@ export default function Week1() {
             {/* 모달 컴포넌트 추가 */}
             {modalVisible && (
                 <Modal>
-                    <h2>가입 성공!</h2><br/>
+                    <h2>가입 성공!</h2>
+                    <br />
                     <h3>UMC 챌린저 가입을 축하드립니다!!</h3>
                     <button onClick={() => setModalVisible(false)}>확인</button>
                 </Modal>
@@ -107,12 +107,7 @@ export default function Week1() {
                     <HeadLine></HeadLine>
                     <InputForm>
                         <p>이름</p>
-                        <InputField
-                            type="text"
-                            placeholder=""
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
+                        <InputField type="text" placeholder="" value={name} onChange={(e) => setName(e.target.value)} />
                         <Message success={nameMessage.success}>{nameMessage.message}</Message>
                         <p>이메일</p>
                         <InputField
@@ -123,12 +118,7 @@ export default function Week1() {
                         />
                         <Message success={emailMessage.success}>{emailMessage.message}</Message>
                         <p>나이</p>
-                        <InputField
-                            type="text"
-                            placeholder=""
-                            value={age}
-                            onChange={(e) => setAge(e.target.value)}
-                        />
+                        <InputField type="text" placeholder="" value={age} onChange={(e) => setAge(e.target.value)} />
                         <Message success={ageMessage.success}>{ageMessage.message}</Message>
                         <p>비밀번호</p>
                         <InputField
@@ -164,7 +154,7 @@ const Container = styled.div`
     position: relative;
     height: 100vw;
     display: flex;
-    background-color: #BDE7FA;
+    background-color: #bde7fa;
     margin: 0 auto;
 `;
 
@@ -173,18 +163,17 @@ const SignUpContainer = styled.div`
     flex-direction: column;
     width: 900px;
     height: 1000px;
-    background-color: #D7EFFA;
+    background-color: #d7effa;
     border-radius: 1rem;
     margin-top: 5rem;
     align-items: center;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-    
+
     h1 {
         text-align: center;
         margin-top: 60px;
         font-style: bold;
     }
-    
 `;
 
 const HeadLine = styled.div`
@@ -194,7 +183,7 @@ const HeadLine = styled.div`
     display: flex;
     background-color: white;
     margin: 0 auto;
-    margin-bottom : -10rem;
+    margin-bottom: -10rem;
 `;
 
 const InputForm = styled.div`
@@ -207,30 +196,28 @@ const InputForm = styled.div`
         color: black;
         font-size: 1.2rem;
         font-weight: 800;
-        line-height: 100%; 
+        line-height: 100%;
     }
 `;
 
-const InputField = styled.input` 
+const InputField = styled.input`
     width: 99%;
     height: 3rem;
     border-radius: 1rem;
     border: 3px solid white;
-    background-color: #D7EFFA;
+    background-color: #d7effa;
 `;
 
-const Message = styled.div` 
-    
-        color: ${({ success }) => (success ? 'green' : 'red')};
-        font-size: 1.2rem;
-        font-weight: 800;
-        line-height: 100%; 
-    
+const Message = styled.div`
+    color: ${({ success }) => (success ? 'green' : 'red')};
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 100%;
 `;
 
 const SignupButton = styled.button`
     margin-bottom: 2rem;
-    margin-top : -10rem;
+    margin-top: -10rem;
     width: 20rem;
     height: 4rem;
     flex-shrink: 0;
@@ -244,7 +231,7 @@ const SignupButton = styled.button`
         font-size: 1.1rem;
         font-style: bold;
         font-weight: 800;
-        line-height: 100%; 
+        line-height: 100%;
     }
 `;
 
@@ -252,11 +239,11 @@ const Modal = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
-    text-align : center;
+    text-align: center;
     transform: translate(-50%, -50%);
     background-color: white;
-    width : 500px;
-    height : 200px;
+    width: 500px;
+    height: 200px;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
