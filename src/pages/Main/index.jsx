@@ -53,7 +53,7 @@ const Container = styled.div`
         font-weight: 900;
         line-height: 130%;
         color: #fff;
-        margin: 2rem;
+        margin-top: 30rem;
         box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
         &:hover {
             background: #f29788;

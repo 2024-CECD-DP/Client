@@ -72,7 +72,7 @@ export default function LoginModal() {
         if (confirmPassword !== password) {
             setConfirmPasswordMessage({ message: '비밀번호가 일치하지 않습니다!', success: false });
             isValid = false;
-        } else if (confirmPassword == '') {
+        } else if (confirmPassword === '') {
             setConfirmPasswordMessage({ message: '비밀번호가 일치하지 않습니다!', success: false });
             isValid = false;
         } else {
@@ -97,7 +97,6 @@ export default function LoginModal() {
                 <Modal>
                     <h2>가입 성공!</h2>
                     <br />
-                    <h3>UMC 챌린저 가입을 축하드립니다!!</h3>
                     <button onClick={() => setModalVisible(false)}>확인</button>
                 </Modal>
             )}
