@@ -2,13 +2,12 @@ import React from 'react';
 import AdvertiserNavbar from '../../components/Navbar/AdvertiserNavbar';
 import { styled } from 'styled-components';
 
-export default function AdvertiserMain() {
+export default function AdvertiserMypage() {
     return (
         <>
             <AdvertiserNavbar></AdvertiserNavbar>
-
             <Wrapper>
-                <div>사업자 메인</div>
+                <div>사업자 마이페이지입니다.</div>
             </Wrapper>
         </>
     );

@@ -1,14 +1,14 @@
 import React from 'react';
-import AdvertiserNavbar from '../../components/Navbar/AdvertiserNavbar';
+import InfluencerNavbar from '../../components/Navbar/InfluencerNavbar';
 import { styled } from 'styled-components';
 
-export default function AdvertiserMain() {
+export default function Report() {
     return (
         <>
-            <AdvertiserNavbar></AdvertiserNavbar>
+            <InfluencerNavbar></InfluencerNavbar>
 
             <Wrapper>
-                <div>사업자 메인</div>
+                <div>인플루언서 리포트 페이지</div>
             </Wrapper>
         </>
     );
