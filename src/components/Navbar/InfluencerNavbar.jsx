@@ -18,7 +18,7 @@ const InfluencerNavbar = () => {
 
     return (
         <Nav>
-            <Logo>
+            <Logo to="/influencer">
                 <img src={LogoImg} alt="Logo" />
             </Logo>
             <Links>
@@ -39,7 +39,7 @@ const InfluencerNavbar = () => {
 const Nav = styled.nav`
     background-color: #ffffff;
     display: flex;
-    width: 100%;
+    width: 2000px;
     height: 120px;
     align-items: center;
     padding-left: 10px;
@@ -54,7 +54,7 @@ const Logo = styled(Link)`
 const Links = styled.div`
     display: flex;
     gap: 4rem;
-    margin-left: 600px;
+    margin-left: 500px;
 `;
 
 const NavLink = styled(Link)`
@@ -77,15 +77,19 @@ const NavLink = styled(Link)`
     }
 `;
 const LoginButton = styled(Link)`
+    font-family: 'DM Sans';
     font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
     text-decoration: none;
-    margin-left: 4rem;
-    display: flex;
+    margin-left: 6rem;
     display: flex;
     padding: 18px 24px;
     width: 100px;
     justify-content: center;
     align-items: center;
+    margin-top: 0.5rem;
     border-radius: 76px;
     border: 1px solid var(--Neutral-400, #d9dbe9);
     background: var(--Neutral-100, #fff);
@@ -103,7 +107,7 @@ const GetStartButton = styled(Link)`
     background: var(--Primary-Color-1, #4a3aff);
     color: var(--Neutral-100, var(--white-100, #fff));
     text-align: center;
-
+    margin-top: 0.5rem;
     font-family: 'DM Sans';
     font-size: 1.5rem;
     font-style: normal;
