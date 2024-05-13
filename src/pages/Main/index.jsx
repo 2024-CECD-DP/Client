@@ -155,7 +155,7 @@ const RightSection = styled.div`
     align-items: center;
     justify-content: center;
     border: none;
-
+    filter: contrast(1.1); /* 대비를 높임 */
     p {
         color: var(--white-100, #fff);
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

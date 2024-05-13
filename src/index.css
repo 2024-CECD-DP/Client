@@ -9,3 +9,12 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+html {
+    --blue: rgba(74, 58, 255, 1);
+    --puple: rgba(163, 56, 246, 1);
+    --gray: rgba(160, 160, 160, 1);
+    --black: rgba(0, 0, 0, 1);
+    --white: rgba(255, 255, 255, 1);
+    --background--gray: #f8fafb;
+}
