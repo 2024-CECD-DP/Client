@@ -16,6 +16,7 @@ export default function Report() {
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
+    background-color: var(--background--gray);
 `;

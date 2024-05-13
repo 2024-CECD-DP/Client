@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import advertiserBackground from '../../assets/advertiser.png';
 import influencerBackground from '../../assets/influencer.png';
 import LogoImg from '../../assets/Collabo.png';
@@ -27,6 +27,9 @@ export default function Main() {
                             </Arrow>
                         </button>
                     </Link>
+                    <LoginLink to="/" style={{ textDecoration: 'none' }}>
+                        로그인/회원가입하기
+                    </LoginLink>
                 </LeftSection>
                 <RightSection>
                     <p>인플루언서이신가요?</p>
@@ -40,6 +43,9 @@ export default function Main() {
                             </Arrow>
                         </button>
                     </Link>
+                    <LoginLink to="/" style={{ textDecoration: 'none' }}>
+                        로그인/회원가입하기
+                    </LoginLink>
                 </RightSection>
             </Container>
         </Wrapper>
@@ -64,6 +70,18 @@ const Logo = styled.div`
     display: flex;
     position: absolute;
     margin: 15px;
+`;
+const LoginLink = styled(Link)`
+    color: var(--white-100, #fff);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    display: flex;
+    position: absolute;
+    bottom: 8.5rem;
 `;
 
 const ColumnLine = styled.div`

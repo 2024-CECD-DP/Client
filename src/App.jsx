@@ -8,10 +8,12 @@ import AdvertiserIntro from './pages/Introduce/AdvertiserIntro';
 import InfluencerMypage from './pages/Mypage/InfluencerMypage';
 import Report from './pages/Influencer/Report';
 import AdvertiserMypage from './pages/Mypage/AdvertiserMypage';
+import GlobalStyle from './styles/GlobalStyle';
 
 function App() {
     return (
         <Router>
+            <GlobalStyle />
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/advertiser" element={<Advertiser />} />
