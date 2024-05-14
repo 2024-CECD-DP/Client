@@ -1,12 +1,12 @@
 import React from 'react';
-import CompanyNavbar from '../../components/Navbar/AdvertiserNavbar';
+import AdvertiserNavbar from '../../components/Navbar/AdvertiserNavbar';
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export default function AdvertiserMain() {
     return (
         <>
-            <CompanyNavbar></CompanyNavbar>
+            <AdvertiserNavbar></AdvertiserNavbar>
 
             <Wrapper>
                 <div>사업자 메인</div>
@@ -22,7 +22,7 @@ export default function AdvertiserMain() {
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
 `;
