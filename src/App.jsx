@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/index';
 import Advertiser from './pages/Advertiser';
 import Influencer from './pages/Influencer';
+import MatchingPage from './pages/Advertiser/MatchingPage';
 import InfluencerIntro from './pages/Introduce/InfluencerIntro';
 import AdvertiserIntro from './pages/Introduce/AdvertiserIntro';
 import InfluencerMypage from './pages/Mypage/InfluencerMypage';
@@ -23,6 +24,15 @@ function App() {
                 <Route path="/report" element={<Report />} />
                 <Route path="/influmypage" element={<InfluencerMypage />} />
                 <Route path="/admypage" element={<AdvertiserMypage />} />
+                <Route path="/matchingPage" element={<MatchingPage />} />
+                <Route
+                    path = "/*"
+                    element={ 
+                        <div>
+                            <h2>이 페이지는 존재하지 않습니다</h2>
+                        </div>
+                    }
+                />
             </Routes>
         </Router>
     );
