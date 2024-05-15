@@ -39,7 +39,7 @@ const InfluencerNavbar = () => {
 const Nav = styled.nav`
     background-color: #ffffff;
     display: flex;
-    width: 2000px;
+    width: 100%;
     height: 120px;
     align-items: center;
     padding-left: 10px;
