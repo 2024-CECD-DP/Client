@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import InfluencerNavbar from '../../components/Navbar/InfluencerNavbar';
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 import InfluMatch from './InfluMatch';
 import SearchIcon from '../../assets/search-icon.png';
 import FilterIcon from '../../assets/filter-icon.png';
+import InfluencerFilterModal from '../../components/Filter/InfluencerFilterModal';
+
 export default function InfluencerMain() {
+    // 모달창 노출 여부 state
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const showModal = () => {
+        setModalOpen(true);
+    };
+
+    // influencerFilterModal의 상태 저장
+    const [filters, setFilters] = useState({
+        beauty: false,
+        fashion: false,
+        sports: false,
+        minFollower: 0,
+        maxFollower: 0,
+        minImpactScore: 0,
+        maxImpactScore: 0,
+        gender: 'unset',
+        hashtagInput: ''
+    });
+    const handleApplyFilters = (updatedFilters) => {
+        setFilters(updatedFilters);
+    };
 
     const influData = [
         {
@@ -53,18 +77,19 @@ export default function InfluencerMain() {
     return (
         <>
             <InfluencerNavbar></InfluencerNavbar>
-
+            <Space/>
             <Wrapper>
                 <SearchAndFilter>
                     <SearchContainer>
                         <StyledSearchIcon src={SearchIcon} alt="Search Icon" />
                         <StyledInput type="text" placeholder="인플루언서 아이디를 검색해 보세요"/>
                     </SearchContainer>
-                    <FilterButton>
+                    <FilterButton onClick={showModal}>
                         필터&키워드 검색
                         <StyledFilterIcon src={FilterIcon} alt="Search Icon" />
                     </FilterButton>
                 </SearchAndFilter>
+                {modalOpen && <InfluencerFilterModal setModalOpen={setModalOpen} filters={filters} setFilters={handleApplyFilters} />}
                 <Result>
                     <Bar>
                         <BarText>프로필</BarText>
@@ -85,6 +110,11 @@ export default function InfluencerMain() {
         </>
     );
 }
+
+// Nav height에 따라 수정
+const Space = styled.div`
+    height: 30px;
+`;
 
 const Wrapper = styled.div`
     display: flex;

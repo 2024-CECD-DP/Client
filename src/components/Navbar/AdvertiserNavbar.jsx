@@ -23,7 +23,7 @@ const AdvertiserNavbar = () => {
             </Logo>
             <Links>
                 <NavLink to="/adintro">소개</NavLink>
-                <NavLink to="/경로설정">인플루언서 추천</NavLink>
+                <NavLink to="/matchingPage">인플루언서 추천</NavLink>
                 <NavLink to="/admypage">마이페이지</NavLink>
                 {isLoggedIn ? (
                     <LoginButton onClick={handleLogout}>로그아웃</LoginButton>

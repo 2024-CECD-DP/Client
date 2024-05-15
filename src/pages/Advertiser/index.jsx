@@ -10,11 +10,6 @@ export default function AdvertiserMain() {
 
             <Wrapper>
                 <div>사업자 메인</div>
-                <Link to="/matchingPage" style={{ textDecoration: 'none' }}>
-                        <button>
-                            <ButtonText>검색</ButtonText>
-                        </button>
-                </Link>
             </Wrapper>
         </>
     );
