@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 import advertiserBackground from '../../assets/advertiser.png';
@@ -7,8 +7,18 @@ import LogoImg from '../../assets/Collabo.png';
 import adverIcon from '../../assets/adicon.png';
 import instaIcon from '../../assets/instaicon.png';
 import arrow from '../../assets/ArrowRight.svg';
+import LoginModal from '../../components/Login/LoginModal';
 
 export default function Main() {
+    const [showModal, setShowModal] = useState(false);
+
+    const handleOpenModal = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
     return (
         <Wrapper>
             <Container>
@@ -27,7 +37,7 @@ export default function Main() {
                             </Arrow>
                         </button>
                     </Link>
-                    <LoginLink to="/" style={{ textDecoration: 'none' }}>
+                    <LoginLink onClick={handleOpenModal} style={{ textDecoration: 'none' }}>
                         로그인/회원가입하기
                     </LoginLink>
                 </LeftSection>
@@ -43,11 +53,12 @@ export default function Main() {
                             </Arrow>
                         </button>
                     </Link>
-                    <LoginLink to="/" style={{ textDecoration: 'none' }}>
+                    <LoginLink onClick={handleOpenModal} style={{ textDecoration: 'none' }}>
                         로그인/회원가입하기
                     </LoginLink>
                 </RightSection>
             </Container>
+            <LoginModal show={showModal} onClose={handleCloseModal} />
         </Wrapper>
     );
 }
