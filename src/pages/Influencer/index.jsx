@@ -8,7 +8,7 @@ export default function InfluencerMain() {
             <InfluencerNavbar></InfluencerNavbar>
 
             <Wrapper>
-                <div>인플루언서 메인</div>
+                <div>인플루언서 소개페이지로 할듯</div>
             </Wrapper>
         </>
     );
