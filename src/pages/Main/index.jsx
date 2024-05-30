@@ -92,7 +92,7 @@ const LoginLink = styled(Link)`
     text-decoration: none;
     display: flex;
     position: absolute;
-    bottom: 8.5rem;
+    bottom: 7.5rem;
 `;
 
 const ColumnLine = styled.div`
