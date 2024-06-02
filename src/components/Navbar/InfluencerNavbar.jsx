@@ -22,7 +22,6 @@ const InfluencerNavbar = () => {
                 <img src={LogoImg} alt="Logo" />
             </Logo>
             <Links>
-                <NavLink to="/influintro">소개</NavLink>
                 <NavLink to="/report">내 리포트</NavLink>
                 <NavLink to="/influmypage">마이페이지</NavLink>
                 {isLoggedIn ? (
@@ -54,7 +53,7 @@ const Logo = styled(Link)`
 const Links = styled.div`
     display: flex;
     gap: 4rem;
-    margin-left: 500px;
+    margin-left: 600px;
 `;
 
 const NavLink = styled(Link)`

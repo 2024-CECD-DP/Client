@@ -22,7 +22,6 @@ const AdvertiserNavbar = () => {
                 <img src={LogoImg} alt="Logo" />
             </Logo>
             <Links>
-                <NavLink to="/adintro">소개</NavLink>
                 <NavLink to="/matchingPage">인플루언서 추천</NavLink>
                 <NavLink to="/admypage">마이페이지</NavLink>
                 {isLoggedIn ? (
@@ -54,7 +53,7 @@ const Logo = styled(Link)`
 const Links = styled.div`
     display: flex;
     gap: 4rem;
-    margin-left: 500px;
+    margin-left: 600px;
 `;
 
 const NavLink = styled(Link)`
