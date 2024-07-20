@@ -6,6 +6,7 @@ import SearchIcon from '../../assets/search-icon.png';
 import FilterIcon from '../../assets/filter-icon.png';
 import InfluencerFilterModal from '../../components/Filter/InfluencerFilterModal';
 import AdvertiserNavbar from '../../components/Navbar/AdvertiserNavbar';
+import LoginModal from '../../components/Login/LoginModal';
 
 export default function InfluencerMain() {
     // 모달창 노출 여부 state
@@ -77,6 +78,7 @@ export default function InfluencerMain() {
     return (
         <>
             <AdvertiserNavbar></AdvertiserNavbar>
+            <LoginModal/>
             <Space />
             <Wrapper>
                 <SearchAndFilter>
