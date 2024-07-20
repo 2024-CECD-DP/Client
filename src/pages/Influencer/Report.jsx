@@ -14,7 +14,7 @@ import {
 import 'chartjs-adapter-date-fns';
 import WordCloud from 'react-d3-cloud';
 import InfluencerNavbar from '../../components/Navbar/InfluencerNavbar';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import data from './data.json';
 import likeIcon from '../../assets/like-icon.png';
 import commentIcon from '../../assets/comment-icon.png';
@@ -43,39 +43,42 @@ export default function Report() {
 
     return (
         <>
+            <GlobalStyle/>
             <InfluencerNavbar />
 
             <Wrapper>
-                <Intro>
-                    <ProfileImage>
-                        <img src={profileData.profileImage} alt="프로필" />
-                    </ProfileImage>
-                    <Username>@{profileData.instaName}</Username>
-                    <Name>{profileData.userName}</Name>
-                    <Category>{data.category}</Category>
-                    <ProfileData>
-                        <ProfileDataColumn>
-                            <ProfileDataItem>
-                                <DataValue>{data.mediaCnt.toLocaleString()}</DataValue>
-                                <DataLabel>게시글</DataLabel>
-                            </ProfileDataItem>
-                            <ProfileDataItem>
-                                <DataValue>{data.follwerCnt.toLocaleString()}</DataValue>
-                                <DataLabel>팔로워</DataLabel>
-                            </ProfileDataItem>
-                        </ProfileDataColumn>
-                        <ProfileDataColumn>
-                            <ProfileDataItem>
-                                <DataValue>{data.InfluenceIndex.toLocaleString()}</DataValue>
-                                <DataLabel>영향력지수</DataLabel>
-                            </ProfileDataItem>
-                            <ProfileDataItem>
-                                <DataValue>{data.adIndex.toLocaleString()}</DataValue>
-                                <DataLabel>광고지수</DataLabel>
-                            </ProfileDataItem>
-                        </ProfileDataColumn>
-                    </ProfileData>
-                </Intro>
+                <LeftSection>
+                    <Intro>
+                        <ProfileImage>
+                            <img src={profileData.profileImage} alt="프로필" />
+                        </ProfileImage>
+                        <Username>@{profileData.instaName}</Username>
+                        <Name>{profileData.userName}</Name>
+                        <Category>{data.category}</Category>
+                        <ProfileData>
+                            <ProfileDataColumn>
+                                <ProfileDataItem>
+                                    <DataValue>{data.mediaCnt.toLocaleString()}</DataValue>
+                                    <DataLabel>게시글</DataLabel>
+                                </ProfileDataItem>
+                                <ProfileDataItem>
+                                    <DataValue>{data.follwerCnt.toLocaleString()}</DataValue>
+                                    <DataLabel>팔로워</DataLabel>
+                                </ProfileDataItem>
+                            </ProfileDataColumn>
+                            <ProfileDataColumn>
+                                <ProfileDataItem>
+                                    <DataValue>{data.InfluenceIndex.toLocaleString()}</DataValue>
+                                    <DataLabel>영향력지수</DataLabel>
+                                </ProfileDataItem>
+                                <ProfileDataItem>
+                                    <DataValue>{data.adIndex.toLocaleString()}</DataValue>
+                                    <DataLabel>광고지수</DataLabel>
+                                </ProfileDataItem>
+                            </ProfileDataColumn>
+                        </ProfileData>
+                    </Intro>
+                </LeftSection>
                 <DataSection>
                     <SectionTitle>인기 포스트</SectionTitle>
                     <PostSection>
@@ -148,6 +151,14 @@ export default function Report() {
     );
 }
 
+// 전역 스타일
+const GlobalStyle = createGlobalStyle`
+  :root {
+    --report-left: 25%;
+    --report-right: calc(100% - var(--report-left));
+  }
+`;
+
 const Wrapper = styled.div`
     width: 100%;
     height: auto;
@@ -157,7 +168,7 @@ const Wrapper = styled.div`
 `;
 
 const Intro = styled.div`
-    width: 375px;
+    width: 80%;
     height: 570px;
     flex-shrink: 0;
     display: flex;
@@ -165,7 +176,7 @@ const Intro = styled.div`
     align-items: center;
     border-radius: 33px;
     background: var(--white-100, #fff);
-    margin: 100px;
+    margin: 50px;
     margin-top: 150px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: #000;
@@ -270,8 +281,13 @@ const Logo = styled.div`
     margin-top: 20px;
 `;
 
+const LeftSection = styled.div`
+    width: var(--report-left);
+`
+
 const DataSection = styled.div`
-    width: 1500px;
+    /*width: 1500px;*/
+    width: var(--report-right);
     display: flex;
     flex-direction: column;
     height: auto;
@@ -290,7 +306,7 @@ const SectionTitle = styled.p`
 `;
 
 const PostSection = styled.div`
-    width: 1500px;
+    width: 100%;
     height: auto;
     flex-shrink: 0;
     display: flex;
@@ -329,7 +345,7 @@ const PostStats = styled.div`
 `;
 
 const FollowerSection = styled.div`
-    width: 1500px;
+    width: 100%;
     height: 570px;
     flex-shrink: 0;
     display: flex;
@@ -338,7 +354,7 @@ const FollowerSection = styled.div`
 
 const FollowerTrend = styled.div`
     display: flex;
-    width: 900px;
+    width: 70%;
     height: 500px;
     flex-shrink: 0;
     border-radius: 20px;
@@ -354,16 +370,15 @@ const FollowerTrend = styled.div`
     line-height: normal;
     letter-spacing: -0.5px;
     text-transform: capitalize;
-    padding: 5px;
 `;
 
 const ReactionIndex = styled.div`
     display: flex;
-    width: 350px;
+    width: 20%;
     height: 500px;
     flex-shrink: 0;
     border-radius: 20px;
-    margin-left: 90px;
+    margin-left: 30px;
     background: #fff;
     box-shadow: 0px 3px 100px 0px rgba(0, 0, 0, 0.1);
     color: #000;
@@ -377,11 +392,10 @@ const ReactionIndex = styled.div`
     line-height: normal;
     letter-spacing: -0.5px;
     text-transform: capitalize;
-    padding: 5px;
 `;
 
 const HashtagSection = styled.div`
-    width: 1500px;
+    width: 100%;
     height: 550px;
     flex-shrink: 0;
     display: flex;
@@ -390,7 +404,7 @@ const HashtagSection = styled.div`
 
 const PostHashtag = styled.div`
     display: flex;
-    width: 800px;
+    width: 60%;
     height: 500px;
     flex-shrink: 0;
     border-radius: 20px;
@@ -412,7 +426,7 @@ const PostHashtag = styled.div`
 
 const ResponsiveHashtag = styled.div`
     display: flex;
-    width: 450px;
+    width: 20%;
     height: 500px;
     flex-shrink: 0;
     border-radius: 20px;
@@ -434,7 +448,7 @@ const ResponsiveHashtag = styled.div`
 `;
 
 const AverageSection = styled.div`
-    width: 1500px;
+    width: 100%;
     height: 380px;
     flex-shrink: 0;
     display: flex;
@@ -442,7 +456,7 @@ const AverageSection = styled.div`
 `;
 
 const Like = styled.div`
-    width: 400px;
+    width: calc(var(--report-right) / 3);
     height: 300px;
     flex-shrink: 0;
     margin-top: 10px;
@@ -464,7 +478,7 @@ const Like = styled.div`
 `;
 
 const Comment = styled.div`
-    width: 400px;
+    width: calc(var(--report-right) / 3);
     height: 300px;
     flex-shrink: 0;
     margin-top: 10px;
@@ -486,7 +500,7 @@ const Comment = styled.div`
 `;
 
 const Upload = styled.div`
-    width: 400px;
+    width: calc(var(--report-right) / 3);
     height: 300px;
     flex-shrink: 0;
     margin-top: 10px;
@@ -502,7 +516,7 @@ const Upload = styled.div`
 `;
 
 const SummarySection = styled.div`
-    width: 1500px;
+    width: 100%;
     height: 550px;
     flex-shrink: 0;
     display: flex;

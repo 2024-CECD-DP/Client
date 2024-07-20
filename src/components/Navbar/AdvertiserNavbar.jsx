@@ -41,7 +41,6 @@ const Nav = styled.nav`
     width: 100%;
     height: 120px;
     align-items: center;
-    padding-left: 10px;
 `;
 
 const Logo = styled(Link)`
